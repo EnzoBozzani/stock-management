@@ -1,0 +1,11 @@
+@import '../../styles/variables.scss';
+
+.wrapper {
+    @include flex(space-between, center);
+    width: 100%;
+    padding: 2rem;
+    nav {
+        @include flex(center, center);
+        gap: 2rem;
+    }
+}
