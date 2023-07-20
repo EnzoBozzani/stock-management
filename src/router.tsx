@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Root, Home, Items, ItemsRoot, NewItem } from "./pages";
+import { Root, Home, Items, ItemsRoot, NewItem, EditItem, Item } from "./pages";
 
 export const router = createBrowserRouter([
     {
@@ -21,6 +21,14 @@ export const router = createBrowserRouter([
                     {
                         path: 'new',
                         element: <NewItem/>
+                    }, 
+                    {
+                        path: ':id',
+                        element: <Item/>
+                    },
+                    {
+                        path: 'edit/:itemId', 
+                        element: <EditItem/>
                     }
                 ]
             }

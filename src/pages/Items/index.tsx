@@ -1,6 +1,10 @@
+import { useContext } from 'react';
 import styles from './styles.module.scss';
+import UrlContext from '../../contexts/UrlContext';
 
 export const Items = () => {
+    const setUrl = useContext(UrlContext);
+    setUrl(location.href);
     return (
         <main className={styles.wrapper}>
             <span className={styles.subtitle}>
