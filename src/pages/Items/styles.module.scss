@@ -1,0 +1,46 @@
+@import '../../styles/variables.scss';
+
+.wrapper {
+    margin-top: 2rem;
+    width: 100%;
+    @include flex(center, center);
+    flex-direction: column;
+
+    .subtitle {
+        width: 95%;
+        background-color: $darker;
+        @include flex(space-between, center);
+        padding: 1.75rem 5rem 1.75rem 1rem;
+    }
+
+    .item {
+        width: 95%;
+        @include flex(space-between, center);
+        padding: 1.75rem 1rem;
+
+        .btns {
+            @include flex(center, center);
+            gap: 10px;
+
+            button {
+                color: $darker;
+                padding: .5rem 1rem;
+                border-radius: 10px;
+                border: 2px solid $darker;
+                font-size: 1rem;
+            }
+
+            .seeBtn {
+                background-color: #005eff;
+            }
+
+            .editBtn {
+                background-color: #fff;
+            }
+
+            .deleteBtn {
+                background-color: #ff0000;
+            }
+        }
+    }
+}

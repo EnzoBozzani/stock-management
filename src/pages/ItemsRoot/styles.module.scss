@@ -1,0 +1,31 @@
+@import '../../styles//variables.scss';
+
+.wrapper {
+    width: 100%;
+    @include flex(center, center);
+    flex-direction: column;
+    gap: 3rem;
+    .title {
+        width: 100%;
+        padding-left: 2rem;
+        font-size: 4rem;
+        font-weight: 200;
+    }
+    nav {
+        width: 95%;
+        @include flex(start, center);
+        flex-direction: column;
+        div, hr {
+            width: 100%;
+        }
+        div {
+            @include flex(start, center);
+            a {
+                padding: 0 2rem 1rem 2rem;
+            }
+        }
+        hr {
+            z-index: 0;
+        }
+    }
+}

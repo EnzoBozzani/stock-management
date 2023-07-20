@@ -1,0 +1,53 @@
+@import '../../styles/variables.scss';
+
+.wrapper {
+    width: 100%;
+    @include flex(center, center);
+
+    form {
+        margin-top: 3rem;
+        width: 95%;
+        @include flex(center, center);
+        flex-direction: column;
+        gap: 2rem;
+
+        .inputs {
+            width: 100%;
+            @include flex(center, center);
+            gap: 3rem;
+
+            div {
+                @include flex(center, start);
+                flex-direction: column;
+                gap: .5rem;
+
+                input,
+                select {
+                    background-color: $darker;
+                    border: 0;
+                    padding: .5rem 1rem;
+                    font-size: 1rem;
+                    width: 100%;
+                }
+
+                select {
+                    appearance: none;
+                }
+            }
+        }
+
+        .textareaGroup {
+            width: 100%;
+            @include flex(center, center);
+            flex-direction: column;
+
+            textarea {
+                width: 72.5%;
+                background-color: $darker;
+                border: 0;
+                padding: .5rem 1rem;
+                font-size: 1rem;
+            }
+        }
+    }
+}
