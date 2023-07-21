@@ -1,13 +1,21 @@
+import { useEffect, useState } from 'react';
 import { DataBox } from '../../components/DataBox';
 import styles from './styles.module.scss';
 
 export const Home = () => {
+
+    const [ localStorageLength, setLocalStorageLength ] = useState<number>(localStorage.length);
+
+    useEffect(() => {
+        setLocalStorageLength(localStorage.length);
+    }, [localStorage.length]);
+
     return (
         <main className={styles.wrapper}>
             <p className={styles.title}>Dashboard</p>
             <section className={styles.section1}>
                 <DataBox title='Items Diversity' number={2}/>
-                <DataBox title='Total Items' number={40}/>
+                <DataBox title='Total Items' number={localStorageLength}/>
                 <DataBox title='Recent Items' number={2}/>
                 <DataBox title='Running Out Items' number={1}/>
             </section>

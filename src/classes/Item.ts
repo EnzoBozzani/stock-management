@@ -1,14 +1,5 @@
 import _ from 'lodash';
 
-const generateRandomId = () => {
-    const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz[]{}/.,<>()-_/|!@#$%&*+=";
-    let id: string = '';
-    for (let i = 0; i < 20; i++){
-        id += _.sample(chars);
-    }
-    return id;
-}
-
 export default class Item {
     private id: string;
     private name: string;
@@ -19,14 +10,26 @@ export default class Item {
     private signedUp: string;
     private lastEdited: string | undefined;
     constructor(name: string, qtd: string, price: string, category: string, desc: string, signedUp: string){
-        this.id = generateRandomId();
+        let id = this.generateRandomId();
+        while (localStorage.getItem(id)){
+            id = this.generateRandomId();
+        }
+        this.id = id;
         this.name = name;
         this.qtd = qtd;
         this.price = price;
         this.category = category;
         this.desc = desc;
         this.signedUp = signedUp;
-    } 
+    }
+    private generateRandomId = () => {
+        const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz[]{}/.,<>()-_/|!@#$%&*+=";
+        let id: string = '';
+        for (let i = 0; i < 20; i++){
+            id += _.sample(chars);
+        }
+        return id;
+    }
     public set setLastEdited(lastEdited : string) {
         this.lastEdited = lastEdited;
     }
