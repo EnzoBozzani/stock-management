@@ -1,5 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Root, Home, Items, ItemsRoot, NewItem, EditItem, Item } from "./pages";
+import { loadItem } from "./loaders/loadItem";
+import { ItemBoundary } from "./error-boundaries/ItemBoundary";
 
 export const router = createBrowserRouter([
     {
@@ -24,7 +26,9 @@ export const router = createBrowserRouter([
                     }, 
                     {
                         path: ':id',
-                        element: <Item/>
+                        element: <Item/>, 
+                        loader: loadItem, 
+                        errorElement: <ItemBoundary/>
                     },
                     {
                         path: 'edit/:itemId', 

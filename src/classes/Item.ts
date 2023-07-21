@@ -8,8 +8,9 @@ export default class Item {
     private category: string;
     private desc: string;
     private signedUp: string;
+    private momentSignedUp: number
     private lastEdited: string | undefined;
-    constructor(name: string, qtd: string, price: string, category: string, desc: string, signedUp: string){
+    constructor(name: string, qtd: string, price: string, category: string, desc: string, signedUp: string, momentSignedUp: number){
         let id = this.generateRandomId();
         while (localStorage.getItem(id)){
             id = this.generateRandomId();
@@ -21,11 +22,12 @@ export default class Item {
         this.category = category;
         this.desc = desc;
         this.signedUp = signedUp;
+        this.momentSignedUp = momentSignedUp;
     }
     private generateRandomId = () => {
         const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz[]{}/.,<>()-_/|!@#$%&*+=";
         let id: string = '';
-        for (let i = 0; i < 20; i++){
+        for (let i = 0; i < 30; i++){
             id += _.sample(chars);
         }
         return id;
@@ -35,5 +37,18 @@ export default class Item {
     }
     public addToLocalStorage(){
         localStorage.setItem(this.id, JSON.stringify(this));
+    }
+    public showInConsole(){
+        console.log(`
+            ID: ${this.id}
+            name: ${this.name}
+            qtd: ${this.qtd}
+            price: ${this.price}
+            category: ${this.category}
+            desc: ${this.desc}
+            signedUp: ${this.signedUp}
+            momentSignedUp: ${this.momentSignedUp}
+            lastEdited: ${this.lastEdited}
+        `);
     }
 }

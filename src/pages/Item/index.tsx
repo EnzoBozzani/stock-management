@@ -1,7 +1,8 @@
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import styles from './styles.module.scss';
 
 export const Item = () => {
+    const item: any = useLoaderData();
     return (
         <>
             <nav className={styles.nav}>
@@ -13,7 +14,7 @@ export const Item = () => {
             </nav>
             <main className={styles.wrapper}>
                 <div>
-
+                    <h1>{item.name}</h1>
                 </div>
             </main>
         </>
