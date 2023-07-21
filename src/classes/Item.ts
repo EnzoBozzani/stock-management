@@ -22,6 +22,7 @@ export default class Item {
         this.category = category;
         this.desc = desc;
         this.signedUp = signedUp;
+        this.lastEdited = signedUp;
         this.momentSignedUp = momentSignedUp;
     }
     private generateRandomId = () => {

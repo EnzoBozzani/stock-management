@@ -33,4 +33,9 @@ a:hover {
 
 button {
     color: $darker;
+    cursor: pointer;
+    transition: .5s;
+    &:hover {
+        transform: translate(0, -5px);
+    }
 }

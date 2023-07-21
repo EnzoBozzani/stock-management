@@ -13,9 +13,25 @@ export const Item = () => {
                 <hr />
             </nav>
             <main className={styles.wrapper}>
-                <div>
-                    <h1>{item.name}</h1>
+                <div className={styles.title}>
+                    <h3>{item.name}</h3>
+                    <div>
+                        <button>Edit</button>
+                        <button className={styles.deleteBtn}>Delete</button>
+                    </div>
                 </div>
+                <span className={styles.info}>
+                    <span>Category: {item.category}</span>
+                    <span>In Stock: {item.qtd}</span>
+                    <span>Pricing: R$ {item.price}</span>
+                </span>
+                <p>
+                    {item.desc}
+                </p>
+                <span className={styles.dates}>
+                    <span>Signed up: {item.signedUp}</span>
+                    <span>Last edited: {item.lastEdited}</span>
+                </span>
             </main>
         </>
     )

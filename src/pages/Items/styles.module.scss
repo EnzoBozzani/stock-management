@@ -22,9 +22,9 @@
 .wrapper {
     margin-top: 2rem;
     width: 100%;
-    @include flex(center, center);
+    @include flex(start, center);
     flex-direction: column;
-
+    margin-bottom: 3rem;
     .subtitle {
         width: 95%;
         background-color: $darker;

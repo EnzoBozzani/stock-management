@@ -5,6 +5,7 @@
     @include flex(center, center);
     flex-direction: column;
     gap: 3rem;
+    margin-bottom: 4rem;
     .title {
         width: 100%;
         padding-left: 2rem;
@@ -18,7 +19,7 @@
     }
     .section2 {
         width: 100%;
-        @include flex(center, center); 
+        @include flex(center, start); 
         section {
             width: 50%;
             @include flex(start, center);

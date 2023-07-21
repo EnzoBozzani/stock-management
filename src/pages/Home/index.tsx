@@ -4,7 +4,7 @@ import { useHomeData } from '../../hooks/useHomeData';
 import styles from './styles.module.scss';
 
 export const Home = () => {
-    const { localStorageLength, diffItemsNumber, recentItemsNumber, recentItems } = useHomeData();
+    const { localStorageLength, diffItemsNumber, recentItemsNumber, recentItems, runningOutNumber, runningOut } = useHomeData();
 
     return (
         <main className={styles.wrapper}>
@@ -13,7 +13,7 @@ export const Home = () => {
                 <DataBox title='Items Diversity' number={diffItemsNumber}/>
                 <DataBox title='Total Items' number={localStorageLength}/>
                 <DataBox title='Recent Items' number={recentItemsNumber}/>
-                <DataBox title='Running Out Items' number={1}/>
+                <DataBox title='Running Out Items' number={runningOutNumber}/>
             </section>
             <section className={styles.section2}>
                 <section>
@@ -25,7 +25,7 @@ export const Home = () => {
                 <section>
                     <p className={styles.subtitle}><span>Items Running Out</span><span>Quantity</span><span>Actions</span></p>
                     <div>
-                        <span className={styles.item}><span>7 Wonders</span><span>8</span><button>Ver</button></span>
+                        {runningOut.map(item => <span className={styles.item} key={item.id}><span>{item.name}</span><span>{item.qtd}</span><Link to={`/items/${item.id}`}><button>Ver</button></Link></span>)}
                     </div>
                 </section>
             </section>

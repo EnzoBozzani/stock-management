@@ -10,7 +10,9 @@ export const useHomeData = () => {
     }
 
     let recentItemsNumber: number = 0;
+    let runningOutNumber: number = 0;
     const recentItems: ItemType[] = [];
+    const runningOut: ItemType[] = [];
     const ids = Object.keys(localStorage);
     ids.forEach((id: string) => {
         const item: ItemType = JSON.parse(localStorage[id]);
@@ -23,10 +25,15 @@ export const useHomeData = () => {
             recentItemsNumber++;
             recentItems.push(item);
         }
+
+        if (+item.qtd < 10){
+            runningOutNumber++;
+            runningOut.push(item);
+        }
     })
     let diffItemsNumber: number = 0;
     Object.values(diversity).forEach(value => {
         value !== 0 && diffItemsNumber++;
     })
-    return { localStorageLength, diffItemsNumber, recentItemsNumber, recentItems };
+    return { localStorageLength, diffItemsNumber, recentItemsNumber, recentItems, runningOutNumber, runningOut };
 }

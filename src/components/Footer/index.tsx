@@ -1,6 +1,6 @@
 export const Footer = () => {
     return (
-        <footer style={{position: 'absolute', bottom: '0', width: '100%', padding: '1rem'}}>
+        <footer style={{position:'relative', bottom: '0', width: '100%', margin: '3rem 0 1rem 2rem', color: '#646cff'}}>
             Made with React & React Router =)
         </footer>
     )

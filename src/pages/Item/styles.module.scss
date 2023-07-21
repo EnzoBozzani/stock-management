@@ -21,4 +21,48 @@
 
 .wrapper {
     width: 100%;
+    margin-bottom: 3rem;
+    .title {
+        width: 100%;
+        @include flex(start, center);
+        gap: 3rem;
+        padding: 2rem 3rem;
+        h3 {
+            font-size: 2rem;
+        }
+        div {
+            @include flex(center, center);
+            gap: .5rem;
+            button {
+                padding: .25rem 1rem;
+                color: $darker;
+                font-size: 1rem;
+                border-radius: 10px;
+                background-color: #fff;
+                border: 2px solid $darker;
+            }
+            .deleteBtn {
+                background-color: #ff0000;
+            }
+        }
+    }
+    .info {
+        padding-left: 2rem;
+        width: 100%;
+        @include flex(start, center);
+        gap: 20px;
+        span {
+            padding: 1rem 2rem;
+            background-color: $darker;
+            @include flex(space-between, center);
+        }
+    }
+    p {
+        padding: 2rem;
+    }
+    .dates {
+        padding: 0 2rem;
+        @include flex(start, center);
+        gap: 30px;
+    }
 }
