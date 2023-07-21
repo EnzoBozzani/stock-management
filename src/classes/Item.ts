@@ -26,7 +26,7 @@ export default class Item {
         this.momentSignedUp = momentSignedUp;
     }
     private generateRandomId = () => {
-        const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz[]{}/.,<>()-_/|!@#$%&*+=";
+        const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
         let id: string = '';
         for (let i = 0; i < 30; i++){
             id += _.sample(chars);

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { DataBox } from '../../components/DataBox';
+import { DataBox } from '../../components';
 import { useHomeData } from '../../hooks/useHomeData';
 import styles from './styles.module.scss';
 

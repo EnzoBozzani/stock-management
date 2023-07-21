@@ -1,5 +1,4 @@
 export const loadItem = (args: any) => {
-    console.log(args); 
     const itemId = args.params.id;
     const item = localStorage[itemId];
     if (!item){

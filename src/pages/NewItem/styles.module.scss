@@ -15,14 +15,13 @@
         }
     }
     hr {
-        z-index: 0;
+        margin: 0;
     }
 }
 
 .wrapper {
     width: 100%;
     @include flex(center, center);
-    margin-bottom: 3rem;
     form {
         margin-top: 3rem;
         width: 95%;

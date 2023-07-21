@@ -25,7 +25,7 @@ export const EditItem = () => {
                         </div>
                         <div>
                             <label htmlFor="">Price:</label>
-                            <input type="number" name='price' id='price' min={0}/>
+                            <input type="number" name='price' id='price' min={0} step={0.01}/>
                         </div>
                         <div>
                             <label htmlFor="cat">Category:</label>

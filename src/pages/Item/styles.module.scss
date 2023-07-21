@@ -15,13 +15,12 @@
         }
     }
     hr {
-        z-index: 0;
+        margin: 0;
     }
 }
 
 .wrapper {
     width: 100%;
-    margin-bottom: 3rem;
     .title {
         width: 100%;
         @include flex(start, center);

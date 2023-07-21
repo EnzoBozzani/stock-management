@@ -27,7 +27,7 @@ export const NewItem = () => {
                         </div>
                         <div>
                             <label htmlFor="">Price:</label>
-                            <input type="number" name='price' id='price' min={0} value={price} onChange={(ev) => setPrice(ev.target.value)} />
+                            <input type="number" name='price' step={0.01} id='price' min={0} value={price} onChange={(ev) => setPrice(ev.target.value)} />
                         </div>
                         <div>
                             <label htmlFor="cat">Category:</label>
