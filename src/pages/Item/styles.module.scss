@@ -1,24 +1,5 @@
 @import '../../styles/variables.scss';
 
-.nav {
-    margin: 0 auto;
-    width: 95%;
-    @include flex(start, center);
-    flex-direction: column;
-    div, hr {
-        width: 100%;
-    }
-    div {
-        @include flex(start, center);
-        a {
-            padding: 0 2rem 1rem 2rem;
-        }
-    }
-    hr {
-        margin: 0;
-    }
-}
-
 .wrapper {
     width: 100%;
     .title {

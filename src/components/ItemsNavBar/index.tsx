@@ -22,15 +22,14 @@ export const ItemsNavBar = () => {
                 <hr />
             </nav>
         )
-    } else {
-        return (
-            <nav className={styles.wrapper}>
-                <div>
-                    <Link to={'/items'}>All Items</Link>
-                    <Link to={'/items/new'}>New Item</Link>
-                </div>
-                <hr />
-            </nav>
-        )
     }
+    return (
+        <nav className={styles.wrapper}>
+            <div>
+                <Link to={'/items'}>All Items</Link>
+                <Link to={'/items/new'}>New Item</Link>
+            </div>
+            <hr />
+        </nav>
+    )
 }

@@ -1,24 +1,5 @@
 @import '../../styles/variables.scss';
 
-.nav {
-    margin: 0 auto;
-    width: 95%;
-    @include flex(start, center);
-    flex-direction: column;
-    div, hr {
-        width: 100%;
-    }
-    div {
-        @include flex(start, center);
-        a {
-            padding: 0 2rem 1rem 2rem;
-        }
-    }
-    hr {
-        margin: 0;
-    }
-}
-
 .wrapper {
     margin-top: 2rem;
     width: 100%;
@@ -27,15 +8,22 @@
     .subtitle {
         width: 95%;
         background-color: $darker;
-        @include flex(space-between, center);
-        padding: 1.75rem 5rem 1.75rem 1rem;
+        @include flex(start, center);
+        padding: 1.75rem 0;
+        span {
+            width: 20%;
+            @include flex(center, center);
+        }
     }
 
     .item {
         width: 95%;
-        @include flex(space-between, center);
+        @include flex(start, center);
         padding: 1.75rem 1rem;
-
+        span {
+            width: 20%;
+            @include flex(center, center);
+        }
         .btns {
             @include flex(center, center);
             gap: 10px;

@@ -1,19 +1,13 @@
+import { ItemsNavBar } from '../../components';
 import { useNewItemForm } from '../../hooks/useNewItemForm';
 import styles from './styles.module.scss';
-import { Link } from 'react-router-dom';
 
 export const NewItem = () => {
     const { name, setName, qtd, setQtd, price, setPrice, category, setCategory, desc, setDesc, handleSubmit } = useNewItemForm();
     
     return (
         <>
-            <nav className={styles.nav}>
-                <div>
-                    <Link to={'/items'}>All Items</Link>
-                    <Link to={'/items/new'}  className='selectedLink'>New Item</Link>
-                </div>
-                <hr />
-            </nav>
+            <ItemsNavBar/>
             <main className={styles.wrapper}>
                 <form onSubmit={(ev) => handleSubmit(ev)}>
                     <div className={styles.inputs}>

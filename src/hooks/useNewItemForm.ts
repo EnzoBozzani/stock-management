@@ -19,7 +19,7 @@ export const useNewItemForm = () => {
         const daysOfWeek: string[] = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
         const months: string[] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dez'];
         const date = new Date();
-        const newItem = new Item(name, qtd, price, category, desc,
+        const newItem = new Item('', name, qtd, price, category, desc,
             `${daysOfWeek[date.getDay()]} ${months[date.getMonth()]} ${date.getDate()} ${date.getFullYear()}`, Date.now());
         newItem.addToLocalStorage();
     }

@@ -1,23 +1,25 @@
 import { Link, useLoaderData } from 'react-router-dom';
 import styles from './styles.module.scss';
+import { ItemsNavBar } from '../../components';
 
 export const Item = () => {
     const item: any = useLoaderData();
+    
     return (
         <>
-            <nav className={styles.nav}>
-                <div>
-                    <Link to={'/items'}>All Items</Link>
-                    <Link to={'/items/new'}>New Item</Link>
-                </div>
-                <hr />
-            </nav>
+            <ItemsNavBar />
             <main className={styles.wrapper}>
                 <div className={styles.title}>
                     <h3>{item.name}</h3>
                     <div>
-                        <button>Edit</button>
-                        <button className={styles.deleteBtn}>Delete</button>
+                        <Link to={`/items/edit/${item.id}`}><button>Edit</button></Link>
+                        <Link to={`/items`}>
+                            <button className={styles.deleteBtn} onClick={() => {
+                                localStorage.removeItem(item.id);
+                            }}>
+                                Delete
+                            </button>
+                        </Link>
                     </div>
                 </div>
                 <span className={styles.info}>
