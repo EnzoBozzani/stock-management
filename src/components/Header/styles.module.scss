@@ -8,4 +8,7 @@
         @include flex(center, center);
         gap: 2rem;
     }
+    @media screen and (max-width: 350px){
+        padding: 2rem 1rem;
+    }
 }

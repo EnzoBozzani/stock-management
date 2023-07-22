@@ -5,6 +5,13 @@
     aspect-ratio: 5/2;
     background-color: #171717;
     padding: 1rem;
+    @media screen and (max-width: 1000px){
+        margin-bottom: 3rem;
+        width: 45%;
+    }
+    @media screen and (max-width: 550px){
+        width: 90%;
+    }
     .title {
         width: 100%;
     }

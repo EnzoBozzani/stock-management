@@ -10,11 +10,17 @@
         padding-left: 2rem;
         font-size: 4rem;
         font-weight: 200;
+        @media screen and (max-width: 400px){
+            font-size: 3rem;
+        }
     }
     .section1 {
         width: 100%;
         @include flex(center, center); 
         gap: 5%;
+        @media screen and (max-width: 1000px){
+            flex-wrap: wrap;
+        }
     }
     .section2 {
         width: 100%;
@@ -45,6 +51,22 @@
                         background-color: #fff;
                         border: 2px solid $darker;
                     }
+                }
+                h2 {
+                    font-size: 1.5rem;
+                    margin: 3rem auto;
+                }
+            }
+        }
+        @media screen and (max-width: 1000px){
+            flex-direction: column;
+            section {
+                width: 100%;
+                .subtitle {
+                    width: 95%;
+                }
+                div {
+                    width: 95%;
                 }
             }
         }
